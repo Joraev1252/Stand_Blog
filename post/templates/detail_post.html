@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<br>
+<p></p>
+<br>
+<p></p>
+<br>
+<p></p>
+<br>
+<p></p>
+<br>
+    <div class="col-lg-6">
+        <div class="blog-post">
+            <div class="blog-thumb">
+                <h2>{{ blog_post.title }}</h2>
+                <img src='{{ blog_post.imageURL }}' alt="">
+            </div>
+            <div class="down-content">
+                <ul class="post-info">
+                    <li><h6>Date: {{ blog_post.date }}</h6></li>
+                </ul>
+                <p><h3>{{ blog_post.body }}</h3></p>
+                <h6>Admin</h6>
+                    <p align="right"><a href="{% url 'post:edit_post' blog_post.id %}" class="active-btn mt-3"><span>Изменить</span></a></p>
+                    <p align="right"><a href="{% url 'post:delete_post' blog_post.id %}" class="active-btn mt-3"><span>Удалить</span></a></p>
+                <div class="post-options">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <ul class="post-tags">
+                                <li><i class="fa fa-tags"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
